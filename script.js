@@ -1,68 +1,49 @@
-//complete this code
-// class Animal {}
-
-// class Dog extends Animal {}
-
-// class Cat extends Animal {}
-
-// // Do not change the code below this line
-// window.Animal = Animal;
-// window.Dog = Dog;
-// window.Cat = Cat;
-
-
-
-class animal{
-
-   constructor(species){
-this.species=species;
-   }
-   getSpecies() {
-        return this.species;
+class Animal {
+    constructor(species) {
+        this._species = species; // Private property to store species
     }
-makesound(){
-    console.log("Some sound");
+
+    // Getter for species
+    get species() {
+        return this._species;
+    }
+
+    // Method to log the sound the animal makes
+    makeSound() {
+        console.log(`The ${this.species} makes a sound`);
+    }
 }
 
-
-}
-
-class cat extends animal{
-    constructor() {
-        super("Cat");  // Call the parent constructor with species "Cat"
+// Subclass Cat that extends Animal
+class Cat extends Animal {
+    constructor(species) {
+        super(species); // Call the parent class constructor
     }
-    purr(){
+
+    // Method to log "purr"
+    purr() {
         console.log("purr");
     }
-    makeSound() {
-        console.log("Meow");
-    }
 }
 
-
-class dog extends animal{
-    constructor() {
-        super("Dog");  // Call the parent constructor with species "Dog"
+// Subclass Dog that extends Animal
+class Dog extends Animal {
+    constructor(species) {
+        super(species); // Call the parent class constructor
     }
 
-    bark(){
+    // Method to log "woof"
+    bark() {
         console.log("woof");
     }
-    makeSound() {
-        console.log("Bark");
-    }
 }
 
-// call the all aniamsls
+// Example usage
+const myCat = new Cat("Siamese");
+myCat.makeSound(); // Output: The Siamese makes a sound
+myCat.purr(); // Output: purr
 
-const cat = new Cat();
-console.log(cat.getSpecies());  // "Cat"
-cat.makeSound();  // "Meow"
-cat.purr();  // "purr"
-
-const dog = new Dog();
-console.log(dog.getSpecies());  // "Dog"
-dog.makeSound();  // "Bark"
-dog.bark();  // "woof"
-
+const myDog = new Dog("Golden Retriever");
+myDog.makeSound(); // Output: The Golden Retriever makes a sound
+myDog.bark(); // Output: woof
 
