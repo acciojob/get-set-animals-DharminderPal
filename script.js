@@ -1,5 +1,5 @@
 
-class animal{
+class Animal{
 
    constructor(species){
 this.species=species;
@@ -12,7 +12,7 @@ makesound(){
 
 }
 
-class cat extends animal{
+class Cat extends Animal{
     constructor() {
         super("Cat");  // Call the parent constructor with species "Cat"
     }
@@ -24,7 +24,7 @@ class cat extends animal{
     }
 }
 
-class dog extends animal{
+class Dog extends Animal{
     constructor() {
         super("Dog");  
     }
@@ -37,7 +37,7 @@ class dog extends animal{
     }
 }
 
-window.animal=animal;
-window.cat=cat;
-window.dog=dog;
+window.Animal=Animal;
+window.Cat=Cat;
+window.Dog=Dog;
 
