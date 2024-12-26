@@ -1,43 +1,43 @@
-class Animal {
-    constructor(species) {
-        this._species = species; // Private property to store species
-    }
 
-    // Getter for species
-    get species() {
-        return this._species;
-    }
+class animal{
 
-    // Method to log the sound the animal makes
-    makeSound() {
-        console.log(`The ${this.species} makes a sound`);
-    }
+   constructor(species){
+this.species=species;
+   }
+  
+makesound(){
+    console.log("Some sound");
 }
 
-// Subclass Cat that extends Animal
-class Cat extends Animal {
-    constructor(species) {
-        super(species); // Call the parent class constructor
-    }
 
-    // Method to log "purr"
-    purr() {
+}
+
+class cat extends animal{
+    constructor() {
+        super("Cat");  // Call the parent constructor with species "Cat"
+    }
+    purr(){
         console.log("purr");
     }
+    makeSound() {
+        console.log("Meow");
+    }
 }
 
-// Subclass Dog that extends Animal
-class Dog extends Animal {
-    constructor(species) {
-        super(species); // Call the parent class constructor
+class dog extends animal{
+    constructor() {
+        super("Dog");  
     }
-
-    // Method to log "woof"
-    bark() {
+    
+    bark(){
         console.log("woof");
     }
+    makeSound() {
+        console.log("Bark");
+    }
 }
-window.Animal=Animal;
-window.Cat=Cat;
-window.Dog=Dog;
+
+window.animal=animal;
+window.cat=cat;
+window.dog=dog;
 
